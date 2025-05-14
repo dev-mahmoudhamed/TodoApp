@@ -8,7 +8,7 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Validation;
 
-namespace TodoApp
+namespace TodoApp.Todo
 {
     public class TodoAppService : ApplicationService, ITodoAppService
     {
@@ -58,15 +58,8 @@ namespace TodoApp
                         Priority = (TodoPriority)input.Priority
                     });
 
-                return new TodoItemInputDto
-                {
-                    Id = todoItem.Id,
-                    Title = todoItem.Title,
-                    Description = todoItem.Description,
-                    DueDate = input.DueDate,
-                    Status = input.Status,
-                    Priority = input.Priority
-                };
+                var dto = ObjectMapper.Map<TodoItem, TodoItemInputDto>(todoItem);
+                return dto;
             }
             catch (Exception ex)
             {

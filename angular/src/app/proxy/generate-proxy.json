@@ -873,13 +873,13 @@
       "rootPath": "app",
       "remoteServiceName": "Default",
       "controllers": {
-        "TodoApp.TodoAppService": {
+        "TodoApp.Todo.TodoAppService": {
           "controllerName": "Todo",
           "controllerGroupName": "Todo",
           "isRemoteService": true,
           "isIntegrationService": false,
           "apiVersion": null,
-          "type": "TodoApp.TodoAppService",
+          "type": "TodoApp.Todo.TodoAppService",
           "interfaces": [
             {
               "type": "TodoApp.ITodoAppService",
